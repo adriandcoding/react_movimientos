@@ -5,4 +5,5 @@ export const appRoutes = {
   movements: "movements/:id",
   transfer: "/transfer",
   transferFromAccount: "/transfer/:id",
+  createAccount: "/create-account",
 };

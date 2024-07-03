@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Transfer: React.FC = () => {
+export const TransferPage: React.FC = () => {
   return (
     <>
       <h1>Transfer</h1>

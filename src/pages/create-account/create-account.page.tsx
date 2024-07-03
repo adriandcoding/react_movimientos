@@ -1,6 +1,6 @@
 import React from "react";
 
-export const addAccount: React.FC = () => {
+export const CreateAccount: React.FC = () => {
   return (
     <>
       <h1>Add Account</h1>

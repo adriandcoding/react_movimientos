@@ -1,6 +1,6 @@
 import React from "react";
 
-export const AccountList: React.FC = () => {
+export const AccountListPage: React.FC = () => {
   return (
     <>
       <h1>Account List Page</h1>
