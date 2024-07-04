@@ -21,9 +21,11 @@ export const LoginPage: React.FC = () => {
     });
   };
   return (
-    <div>
-      <h1>Login Page</h1>
+    <>
+      <header>
+        <img src="assets/logo_header.svg" alt="" />
+      </header>
       <LoginFormComponent onLogin={handleSubmit} />
-    </div>
+    </>
   );
 };
