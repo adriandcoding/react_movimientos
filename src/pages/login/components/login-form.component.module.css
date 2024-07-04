@@ -1,0 +1,26 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.error {
+  color: var(--error_color);
+  font-size: 12px;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.input_error {
+  box-shadow: unset;
+  border: 1px solid var(--error_color);
+}
+
+.button {
+  width: 25%;
+}
+
+@media screen and (max-width: 500px) {
+  .button {
+    width: 100%;
+  }
+}
