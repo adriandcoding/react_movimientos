@@ -1,4 +1,5 @@
 import { HeaderComponent, NavBarComponent } from "./components";
+import { FooterComponent } from "./components/footer.component";
 interface Props {
   children: React.ReactNode;
 }
@@ -10,9 +11,7 @@ export const AppLayout: React.FC<Props> = (props) => {
       <HeaderComponent />
       <NavBarComponent />
       <main>{children}</main>
-      <footer>
-        <p>2022 Company Name</p>
-      </footer>
+      <FooterComponent />
     </div>
   );
 };
