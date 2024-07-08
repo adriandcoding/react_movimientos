@@ -1,7 +1,9 @@
 import React from "react";
 import classes from "./header.component.module.css";
+import { useUserContext } from "@/core/profile";
 
 export const HeaderComponent: React.FC = () => {
+  const { username } = useUserContext();
   return (
     <header className={classes.header}>
       <div>
@@ -11,8 +13,8 @@ export const HeaderComponent: React.FC = () => {
           alt="company logo"
         />
         <div className={classes.headerText}>
-          <img src="assets/icon-user.svg" alt="" />
-          <p>Welcome, John Doe</p>
+          <img src="assets/icon-user.svg" alt="icon of user" />
+          <p>Hello,{username}</p>
         </div>
       </div>
     </header>

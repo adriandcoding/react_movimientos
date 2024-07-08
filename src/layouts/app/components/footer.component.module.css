@@ -1,0 +1,12 @@
+.footerLogo {
+  width: 200px;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  background-color: var(--secondary_color);
+  padding: 5em;
+  margin-top: auto;
+}

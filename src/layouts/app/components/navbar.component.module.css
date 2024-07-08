@@ -19,7 +19,9 @@
   }
 }
 .selected {
-  border-bottom: 5px solid var(--primary_color);
+  border-bottom: 7px solid var(--primary_color);
+
+  padding-bottom: 10px;
 
   margin-bottom: -12px;
 }
