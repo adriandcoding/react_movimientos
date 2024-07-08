@@ -1,4 +1,4 @@
-import * as react from "react";
+import { HeaderComponent, NavBarComponent } from "./components";
 interface Props {
   children: React.ReactNode;
 }
@@ -7,12 +7,11 @@ export const AppLayout: React.FC<Props> = (props) => {
 
   return (
     <div>
-      <header>
-        <h1>App Layout</h1>
-      </header>
+      <HeaderComponent />
+      <NavBarComponent />
       <main>{children}</main>
       <footer>
-        <p>�� 2022 Company Name</p>
+        <p>2022 Company Name</p>
       </footer>
     </div>
   );

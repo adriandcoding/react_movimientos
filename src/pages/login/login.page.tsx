@@ -17,7 +17,7 @@ export const LoginPage: React.FC = () => {
       if (isValid) {
         navigate(appRoutes.accountList);
       } else {
-        alert("Invalid credentials");
+        alert("Please check your username and password and try again.");
       }
     });
   };

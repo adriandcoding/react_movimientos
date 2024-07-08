@@ -1,5 +1,5 @@
 import { appRoutes } from "@/core/router";
-import { AppLayout } from "@/layout";
+import { AppLayout } from "@/layouts";
 import React from "react";
 import { Link, generatePath } from "react-router-dom";
 
@@ -10,14 +10,8 @@ export const AccountListPage: React.FC = () => {
       <Link to={generatePath(appRoutes.movements, { id: "1" })}>
         Movimientos de la cuenta 1
       </Link>
-      <br />
-      <br />
-      <br />
 
       <Link to={appRoutes.transfer}>Transferencias </Link>
-      <br />
-      <br />
-      <br />
 
       <Link to={generatePath(appRoutes.transferFromAccount, { id: "1" })}>
         Transferencia cuenta 1

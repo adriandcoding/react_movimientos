@@ -10,7 +10,7 @@ describe("login.mapper specs", () => {
       password: "password",
     };
     const apiCredentials: apiModel.CredentialsApi = {
-      username: "username",
+      user: "username",
       password: "password",
     };
     //act

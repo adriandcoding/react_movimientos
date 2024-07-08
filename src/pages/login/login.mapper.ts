@@ -4,6 +4,6 @@ import * as viewModel from "./login.vm";
 export const mapCredentialsFromVmToApi = (
   credentials: viewModel.Credentials
 ): apiModel.CredentialsApi => ({
-  username: credentials.username,
+  user: credentials.username,
   password: credentials.password,
 });
