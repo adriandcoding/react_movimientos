@@ -1,0 +1,15 @@
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 20px;
+  border-bottom: 5px solid var(--secondary_color);
+  padding-bottom: 15px;
+
+  h1 {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 1.5em;
+    font-weight: 300;
+  }
+}

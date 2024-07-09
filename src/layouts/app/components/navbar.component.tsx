@@ -3,7 +3,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import classes from "./navbar.component.module.css";
 
-export const NavLink: React.FC<{
+const NavLink: React.FC<{
   to: string;
   label: string;
   selectedPath: string;
