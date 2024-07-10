@@ -7,6 +7,11 @@ export interface MovementsApiModel {
   balance: number;
   accountId: number;
 }
-export interface Account {
-  accountId: string;
+export interface AccountApiModel {
+  id: string;
+  iban: string;
+  type: string;
+  name: string;
+  balance: number;
+  lastTransaction: string;
 }

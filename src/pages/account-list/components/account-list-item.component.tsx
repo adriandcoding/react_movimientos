@@ -50,7 +50,7 @@ export const AccountListItemComponent: React.FC<Props> = (props) => {
       </span>
 
       <span className={`  ${classes.dataCell} ${classes.selectContainer}`}>
-        <select name="" id="" onChange={handledSelectedOptionChange}>
+        <select name=" " id=" " onChange={handledSelectedOptionChange}>
           <option value={ACTION_NONE}>Seleccionar</option>
           <option value={ACTION_TRANSFER}>Transferencias</option>
           <option value={ACTION_MOVEMENTS}>Movimientos</option>
