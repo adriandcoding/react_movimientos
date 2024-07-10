@@ -7,21 +7,16 @@ import { Movements } from "./movement-list.vm";
 import { getMovements } from "./api";
 import { mapMovementsFromApiToVm } from "./movements.mapper";
 
-interface Props {
-  accountId: string;
-}
-
-export const MovementListPage: React.FC<Props> = (props) => {
-  const { accountId } = props;
+export const MovementListPage: React.FC = () => {
   const [accountMovements, setAccountMovements] = React.useState<Movements[]>(
     []
   );
 
   React.useEffect(() => {
-    getMovements(accountId).then((result) => {
+    getMovements("3").then((result) => {
       setAccountMovements(mapMovementsFromApiToVm(result));
     });
-  }, [accountId]);
+  }, []);
 
   return (
     <AppLayout>
