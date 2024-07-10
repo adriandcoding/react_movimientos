@@ -3,6 +3,6 @@ export interface AccountVm {
   iban: string;
   type: string;
   name: string;
-  balance: number;
+  balance: string;
   lastTransaction: Date;
 }

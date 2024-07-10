@@ -22,9 +22,7 @@ export const AccountListItemComponent: React.FC<Props> = (props) => {
   ) => {
     switch (e.target.value) {
       case ACTION_TRANSFER:
-        navigate(
-          generatePath(appRoutes.transferFromAccount, { id: accountItem.id })
-        );
+        navigate(generatePath(appRoutes.transfer, { id: accountItem.id }));
         break;
       case ACTION_MOVEMENTS:
         navigate(generatePath(appRoutes.movements, { id: accountItem.id }));
@@ -42,7 +40,7 @@ export const AccountListItemComponent: React.FC<Props> = (props) => {
           {accountItem.iban}
         </Link>
       </span>
-      <span className={classes.dataCell}>{accountItem.type}</span>
+      <span className={classes.dataCell}>{accountItem.name}</span>
 
       <span className={`  ${classes.dataCell} ${classes.align}`}>
         {accountItem.balance}

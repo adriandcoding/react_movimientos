@@ -11,9 +11,9 @@ export const AppLayout: React.FC<Props> = (props) => {
   return (
     <div className={classes.bodyFlex}>
       <HeaderComponent />
-
       <NavBarComponent />
       <main>{children}</main>
+
       <FooterComponent />
     </div>
   );
