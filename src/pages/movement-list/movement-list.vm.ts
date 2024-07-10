@@ -3,7 +3,7 @@ export interface Movements {
   description: string;
   amount: number;
   balance: number;
-  transaction: string;
-  realTransaction: string;
+  transaction: Date;
+  realTransaction: Date;
   accountId: number;
 }

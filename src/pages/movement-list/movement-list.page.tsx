@@ -13,7 +13,7 @@ export const MovementListPage: React.FC = () => {
   );
 
   React.useEffect(() => {
-    getMovements("3").then((result) => {
+    getMovements("1").then((result) => {
       setAccountMovements(mapMovementsFromApiToVm(result));
     });
   }, []);

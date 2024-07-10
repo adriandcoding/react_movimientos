@@ -14,8 +14,12 @@ export const MovementsItemComponent: React.FC<Props> = (props) => {
   //render
   return (
     <div className={classes.row}>
-      <span className={classes.dataCell}> {movementsItem.transaction}</span>
-      <span className={classes.dataCell}> {movementsItem.realTransaction}</span>
+      <span className={classes.dataCell}>
+        {movementsItem.transaction.toLocaleDateString()}
+      </span>
+      <span className={classes.dataCell}>
+        {movementsItem.realTransaction.toLocaleDateString()}
+      </span>
       <span className={classes.dataCell}> {movementsItem.description}</span>
       <span className={`  ${classes.dataCell} ${classes.align}`}>
         {movementsItem.amount}
