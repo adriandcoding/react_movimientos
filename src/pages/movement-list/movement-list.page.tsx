@@ -1,20 +1,43 @@
 import { AppLayout } from "@/layouts";
 import React from "react";
 import classes from "./movement-list.page.module.css";
+import { MovementsTableComponent } from "./components";
 
-export const MovementListPage: React.FC = () => {
+import { Movements } from "./movement-list.vm";
+import { getMovements } from "./api";
+import { mapMovementsFromApiToVm } from "./movements.mapper";
+
+interface Props {
+  accountId: string;
+}
+
+export const MovementListPage: React.FC<Props> = (props) => {
+  const { accountId } = props;
+  const [accountMovements, setAccountMovements] = React.useState<Movements[]>(
+    []
+  );
+
+  React.useEffect(() => {
+    getMovements(accountId).then((result) => {
+      setAccountMovements(mapMovementsFromApiToVm(result));
+    });
+  }, [accountId]);
+
   return (
     <AppLayout>
-      <div className={classes.headerContainer}>
-        <h1>Saldos y últimos Movimientos</h1>
-        <div>
-          <h3>Saldo disponible</h3>
-          <p>1222</p>
+      <div>
+        <div className={classes.headerContainer}>
+          <h1>Saldos y últimos Movimientos</h1>
+          <div className={classes.saldo}>
+            <h3>Saldo disponible</h3>
+            <p className={classes.balance}>1222</p>
+          </div>
         </div>
-      </div>
-      <div className={classes.caca}>
-        <h4>Alias:{}</h4>
-        <h4>IBAN:{}</h4>
+        <div className={classes.headerBottom}>
+          <h4>Alias:{}</h4>
+          <h4>{}</h4>
+        </div>
+        <MovementsTableComponent accountMovements={accountMovements} />
       </div>
     </AppLayout>
   );

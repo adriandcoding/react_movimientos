@@ -19,7 +19,7 @@ export const HeaderComponent: React.FC = () => {
         </Link>
         <div className={classes.headerText}>
           <img src="assets/icon-user.svg" alt="icon of user" />
-          <p>Hello,{username}</p>
+          <p>Hola,{username}</p>
         </div>
       </div>
     </header>

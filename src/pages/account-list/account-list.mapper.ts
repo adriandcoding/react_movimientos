@@ -3,8 +3,8 @@ import * as viewModel from "./account-list.vm";
 
 export const mapAccountListFromApiToVm = (
   accountList: apiModel.AccountApiModel[]
-): viewModel.AccountVm[] =>
-  accountList.map(
+): viewModel.AccountVm[] => {
+  return accountList.map(
     (account): viewModel.AccountVm => ({
       id: account.id,
       iban: account.iban,
@@ -14,3 +14,4 @@ export const mapAccountListFromApiToVm = (
       lastTransaction: new Date(account.lastTransaction),
     })
   );
+};

@@ -14,10 +14,10 @@ export const AccountListTableComponent: React.FC<Props> = (props) => {
       <div className={classes.gridTable}>
         <div className={classes.headerTable}>
           <span className={classes.headerCell}>IBAN</span>
-          <span className={classes.headerCell}>NAME</span>
-          <span className={classes.headerCell}>BALANCE</span>
-          <span className={classes.headerCell}>LAST TRANSACTION</span>
-          <span className={classes.headerCell}>OPERATION</span>
+          <span className={classes.headerCell}>ALIAS</span>
+          <span className={classes.headerCell}>SALDO DISPONIBLE</span>
+          <span className={classes.headerCell}>ULTIMA OPERACIÓN</span>
+          <span className={classes.headerCell}>OPERACIÓN</span>
         </div>
         {accountList.map((account) => (
           <AccountListItemComponent key={account.id} accountItem={account} />

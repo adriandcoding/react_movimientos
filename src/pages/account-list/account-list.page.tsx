@@ -21,9 +21,9 @@ export const AccountListPage: React.FC = () => {
     <AppLayout>
       <div>
         <div className={classes.headerContainer}>
-          <h1>Account List</h1>
-          <Link to={appRoutes.createAccount}>
-            <button> CREATE ACCOUNT</button>
+          <h1>Mis Cuentas</h1>
+          <Link to={appRoutes.createAccount} style={{ textDecoration: "none" }}>
+            <button>AGREGAR NUEVA CUENTA</button>
           </Link>
         </div>
         <AccountListTableComponent accountList={accountList} />

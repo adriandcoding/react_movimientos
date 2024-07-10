@@ -1,0 +1,26 @@
+.row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+}
+.row:nth-child(odd) {
+  background-color: #eeeeee;
+}
+.dataCell {
+  font-size: 16px;
+  padding: 15px;
+  color: var(--secondary_color);
+  display: flex;
+  align-items: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.align {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-right: 20px;
+}
+.bold {
+  font-weight: 600;
+}
