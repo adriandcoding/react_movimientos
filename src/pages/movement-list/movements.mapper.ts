@@ -3,8 +3,8 @@ import * as viewModel from "./movement-list.vm";
 
 export const mapMovementsFromApiToVm = (
   movements: apiModel.MovementsApiModel[]
-): viewModel.Movements[] => {
-  return movements.map(
+): viewModel.Movements[] =>
+  movements.map(
     (movement): viewModel.Movements => ({
       id: movement.id.toString(),
       description: movement.description.toString(),
@@ -15,4 +15,3 @@ export const mapMovementsFromApiToVm = (
       accountId: movement.accountId,
     })
   );
-};

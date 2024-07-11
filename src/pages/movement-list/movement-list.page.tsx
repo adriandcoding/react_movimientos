@@ -2,17 +2,24 @@ import { AppLayout } from "@/layouts";
 import React from "react";
 import classes from "./movement-list.page.module.css";
 import { MovementsTableComponent } from "./components";
-
-import { useParams } from "react-router-dom";
-import { Movements, emptyMovements } from "./movement-list.vm";
+import { getIban } from "../account-list/api";
+import { Movements } from "./movement-list.vm";
 import { getMovements } from "./api";
+import { mapMovementsFromApiToVm } from "./movements.mapper";
+import { useParams } from "react-router-dom";
 
 export const MovementListPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const [accountMovements, setAccountMovements] =
-    React.useState<Movements>(emptyMovements);
+
+  const [movementsList, setMovementsList] = React.useState<Movements[]>([]);
+  const [iban, setIban] = React.useState<string>("");
+
   React.useEffect(() => {
     if (id) {
+      getMovements(id).then((result) =>
+        setMovementsList(mapMovementsFromApiToVm(result))
+      );
+      getIban(id).then((iban) => setIban(iban ?? ""));
     }
   }, [id]);
   return (
@@ -26,10 +33,10 @@ export const MovementListPage: React.FC = () => {
           </div>
         </div>
         <div className={classes.headerBottom}>
-          <h4>Alias:{id}</h4>
-          <h4>{}</h4>
+          <h4>Alias: Gastos Mes</h4>
+          <h4>IBAN: {iban}</h4>
         </div>
-        <MovementsTableComponent accountMovements={[]} />
+        <MovementsTableComponent accountMovements={movementsList} />
       </div>
     </AppLayout>
   );

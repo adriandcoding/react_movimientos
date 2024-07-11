@@ -27,7 +27,11 @@ export const NavBarComponent: React.FC = () => {
           label="Mis Cuentas"
           selectedPath={routesPrefixes.accountList}
         />
-
+        <NavLink
+          to={appRoutes.movements}
+          label="Movimientos"
+          selectedPath={appRoutes.movements}
+        />
         <NavLink
           to={appRoutes.transfer}
           label="Transferencias"
