@@ -24,7 +24,7 @@ export const MovementsTableComponent: React.FC<Props> = (props) => {
 
         {accountMovements.map((Movements) => (
           <MovementsItemComponent
-            key={Movements.id}
+            key={Movements.accountId}
             movementsItem={Movements}
           />
         ))}

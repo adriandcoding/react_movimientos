@@ -3,22 +3,18 @@ import React from "react";
 import classes from "./movement-list.page.module.css";
 import { MovementsTableComponent } from "./components";
 
-import { Movements } from "./movement-list.vm";
+import { useParams } from "react-router-dom";
+import { Movements, emptyMovements } from "./movement-list.vm";
 import { getMovements } from "./api";
-import { mapMovementsFromApiToVm } from "./movements.mapper";
-import { generatePath } from "react-router-dom";
 
 export const MovementListPage: React.FC = () => {
-  const [accountMovements, setAccountMovements] = React.useState<Movements[]>(
-    []
-  );
-
+  const { id } = useParams<{ id: string }>();
+  const [accountMovements, setAccountMovements] =
+    React.useState<Movements>(emptyMovements);
   React.useEffect(() => {
-    getMovements("1").then((result) => {
-      setAccountMovements(mapMovementsFromApiToVm(result));
-    });
-  }, []);
-
+    if (id) {
+    }
+  }, [id]);
   return (
     <AppLayout>
       <div>
@@ -30,10 +26,10 @@ export const MovementListPage: React.FC = () => {
           </div>
         </div>
         <div className={classes.headerBottom}>
-          <h4>Alias:{}</h4>
+          <h4>Alias:{id}</h4>
           <h4>{}</h4>
         </div>
-        <MovementsTableComponent accountMovements={accountMovements} />
+        <MovementsTableComponent accountMovements={[]} />
       </div>
     </AppLayout>
   );
