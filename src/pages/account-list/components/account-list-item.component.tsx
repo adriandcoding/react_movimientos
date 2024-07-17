@@ -2,21 +2,20 @@ import { appRoutes } from "@/core/router";
 import { AccountVm } from "../account-list.vm";
 import classes from "./account-list-item.component.module.css";
 import { Link, generatePath, useNavigate } from "react-router-dom";
-//constants
+
 const ACTION_NONE = "";
 const ACTION_TRANSFER = "1";
 const ACTION_MOVEMENTS = "2";
-//interface
+
 interface Props {
   accountItem: AccountVm;
 }
-//Componer definition
+
 export const AccountListItemComponent: React.FC<Props> = (props) => {
-  //destructuring PROPS
   const { accountItem } = props;
-  //useNavigate hook to navigate to other routes
+
   const navigate = useNavigate();
-  //event handler for selected option change
+
   const handledSelectedOptionChange = (
     e: React.ChangeEvent<HTMLSelectElement>
   ) => {

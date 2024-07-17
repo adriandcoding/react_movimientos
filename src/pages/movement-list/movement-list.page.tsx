@@ -27,7 +27,7 @@ export const MovementListPage: React.FC = () => {
     <AppLayout>
       <div>
         <div className={classes.headerContainer}>
-          <h1>Saldos y últimos Movimientos</h1>
+          <h1>Saldos y Últimos Movimientos</h1>
           <div className={classes.saldo}>
             <h3>Saldo disponible</h3>
             <p className={classes.balance}>{balance}€</p>

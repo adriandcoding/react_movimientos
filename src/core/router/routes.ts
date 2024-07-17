@@ -8,7 +8,7 @@ export const appRoutes = {
   accountList: routesPrefixes.accountList,
   editAccount: "/edit-account/:id",
   movements: `${routesPrefixes.movements}/:id`,
-  transfer: routesPrefixes.transfer,
+  transfer: `${routesPrefixes.transfer}/:id`,
   transferFromAccount: `${routesPrefixes.transfer}/:id`,
   createAccount: "/create-account",
 };
