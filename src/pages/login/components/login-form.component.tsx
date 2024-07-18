@@ -67,4 +67,3 @@ export const LoginFormComponent: React.FC<LoginProps> = (props) => {
     </form>
   );
 };
-/*comentario prueba*/

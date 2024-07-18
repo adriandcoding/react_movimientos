@@ -2,7 +2,8 @@ import React from "react";
 import classes from "./header.component.module.css";
 import { useUserContext } from "@/core/profile";
 import { Link, generatePath } from "react-router-dom";
-
+import logoHeader from "/assets/logo_header_white.svg";
+import iconUser from "/assets/icon-user.svg";
 import { appRoutes } from "@/core/router";
 
 export const HeaderComponent: React.FC = () => {
@@ -12,13 +13,13 @@ export const HeaderComponent: React.FC = () => {
       <div>
         <Link to={generatePath(appRoutes.accountList)}>
           <img
-            src="assets/logo_header_white.svg"
+            src={logoHeader}
             className={classes.headerLogo}
             alt="company logo"
           />
         </Link>
         <div className={classes.headerText}>
-          <img src="assets/icon-user.svg" alt="icon of user" />
+          <img src={iconUser} alt="icon of user" />
           <p>Hola,{username}</p>
         </div>
       </div>
