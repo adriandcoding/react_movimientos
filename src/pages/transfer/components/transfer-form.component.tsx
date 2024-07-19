@@ -7,48 +7,83 @@ interface Props {
 }
 export const TransferFormComponent: React.FC<Props> = (props) => {
   const { accountList, onTransfer } = props;
-  const [transfer /*setTransfer*/] = React.useState<TransferVm>(emptyTransfer);
+  const [transfer, setTransfer] = React.useState<TransferVm>(emptyTransfer);
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     onTransfer(transfer);
+  };
+  const handleFieldChange = (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    {
+      setTransfer({
+        ...transfer,
+        [event.target.name]: event.target.value,
+      });
+    }
   };
   return (
     <div>
       <h2>Transferencias</h2>
       <form action="" onSubmit={handleSubmit}>
         <div>
-          <label>Seleccione Cuenta de origen</label>
-          <select name="originAccount" required>
+          <label htmlFor="originAccount">Seleccione Cuenta de origen</label>
+          <select name="accountId" required onChange={handleFieldChange}>
             {accountList.map((account) => (
               <option key={account.id} value={account.id}>
                 {account.alias}
               </option>
             ))}
+            <option value="">Seleccione una cuenta</option>
           </select>
+
           <div>
-            <label>Cuenta de destino:</label>
+            <label htmlFor="destinationAccount">Cuenta de destino:</label>
             <input
               type="text"
-              name="destinationAccount"
+              name="iban"
               required
               placeholder="IBAN"
+              onChange={handleFieldChange}
             />
           </div>
           <div>
-            <label htmlFor="">Beneficiario</label>
-            <input type="text" name="beneficiary" required />
+            <label htmlFor="Beneficiario">Beneficiario</label>
+            <input
+              type="text"
+              name="name"
+              required
+              onChange={handleFieldChange}
+            />
           </div>
           <div>
-            <label htmlFor="">Importe</label>
-            <input type="number" name="amount" required />
+            <label htmlFor="importe">Importe</label>
+            <input
+              type="number"
+              name="amount"
+              required
+              onChange={handleFieldChange}
+            />
           </div>
           <div>
             <label htmlFor="Concepto">Concepto</label>
-            <input type="text" name="concept" id="" />
+            <input
+              type="text"
+              name="concept"
+              id=""
+              onChange={handleFieldChange}
+            />
           </div>
           <div>
             <label htmlFor="Observaciones">Observaciones</label>
-            <input type="text" name="notes" id="" />
+            <input
+              type="text"
+              name="notes"
+              id=""
+              onChange={handleFieldChange}
+            />
           </div>
           <div>
             <p>
@@ -57,7 +92,12 @@ export const TransferFormComponent: React.FC<Props> = (props) => {
             </p>
             <div>
               <label htmlFor="fechaDeTransferencia">Fecha de ejecución</label>
-              <input type="date" name="transferDate" id="" />
+              <input
+                type="date"
+                name="realDateTransfer"
+                id=""
+                onChange={handleFieldChange}
+              />
             </div>
           </div>
         </div>
@@ -65,7 +105,13 @@ export const TransferFormComponent: React.FC<Props> = (props) => {
           <p>Escriba una dirección de email para avisar al beneficiario:</p>
           <div>
             <label htmlFor="email">Email del beneficiario</label>
-            <input type="email" name="email" id="" required />
+            <input
+              type="email"
+              name="email"
+              id=""
+              required
+              onChange={handleFieldChange}
+            />
           </div>
         </div>
 
