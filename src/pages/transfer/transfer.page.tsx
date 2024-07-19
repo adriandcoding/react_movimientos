@@ -1,23 +1,28 @@
 import { AppLayout } from "@/layouts";
 import React from "react";
-import { AccountVm } from "./transfer.vm";
+import { AccountVm, TransferVm } from "./transfer.vm";
+import { TransferFormComponent } from "./components";
 
 export const accountListMock: AccountVm[] = [
-  { id: "123", iban: "FR763000101012345678901132", alias: "Test account" },
-  { id: "456", iban: "FR763000101012345678901133", alias: "Test account 2" },
-  { id: "789", iban: "FR763000101012345678901134", alias: "Test account 3" },
+  { id: "1", iban: "FR763000101012345678901132", alias: "Test account" },
+  { id: "2", iban: "FR763000101012345678901133", alias: "Test account 2" },
+  { id: "3", iban: "FR763000101012345678901134", alias: "Test account 3" },
 ];
 
 export const TransferPage: React.FC = () => {
-  // Mock data
-  const [, /*accountList*/ setAccountList] = React.useState<AccountVm[]>([]);
+  const [accountList, setAccountList] = React.useState<AccountVm[]>([]);
   React.useEffect(() => {
     setAccountList(accountListMock);
   }, []);
-
+  const handleTransfer = (transferInfo: TransferVm) => {
+    console.log(transferInfo);
+  };
   return (
     <AppLayout>
-      <h1>Transfer</h1>
+      <TransferFormComponent
+        accountList={accountList}
+        onTransfer={handleTransfer}
+      />
     </AppLayout>
   );
 };
