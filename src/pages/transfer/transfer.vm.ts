@@ -1,4 +1,3 @@
-import { getIban } from "./../movement-list/api/movements.api";
 export interface AccountVm {
   id: string;
   iban: string;
