@@ -29,18 +29,18 @@ export interface TransferError {
   accountId: string;
   iban: string;
   name: string;
-  amount: number;
+  amount: string;
   concept: string;
   notes: string;
   dateTransfer: string;
-  realDateTransfer?: Date;
+  realDateTransfer?: string;
   email: string;
 }
 export const emptyTransferError: TransferError = {
   accountId: "",
   iban: "",
   name: "",
-  amount: 0,
+  amount: "",
   concept: "",
   notes: "",
   dateTransfer: "",

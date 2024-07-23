@@ -4,6 +4,7 @@ import {
   isDateAfterToday,
   isValidEmail,
   isFieldInformed,
+  isValueNotNullOrUndefined,
 } from "./plain.validation";
 
 describe("plain.validation", () => {
@@ -126,6 +127,32 @@ describe("plain.validation", () => {
       const field = "";
       //act
       const result = isFieldInformed(field);
+      //assert
+      expect(result).toBeFalsy();
+    });
+  });
+  describe("isValueNotNullOrUndefined specs", () => {
+    it("should return true for non-null or undefined value", () => {
+      //arrange
+      const value = "test";
+      //act
+      const result = isValueNotNullOrUndefined(value);
+      //assert
+      expect(result).toBeTruthy();
+    });
+    it("should return false for null value", () => {
+      //arrange
+      const value = null;
+      //act
+      const result = isValueNotNullOrUndefined(value);
+      //assert
+      expect(result).toBeFalsy();
+    });
+    it("should return false for undefined value", () => {
+      //arrange
+      const value: any = undefined;
+      //act
+      const result = isValueNotNullOrUndefined(value);
       //assert
       expect(result).toBeFalsy();
     });

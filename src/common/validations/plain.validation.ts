@@ -11,3 +11,6 @@ export const isValidEmail = (email: string): boolean =>
 export const isFieldInformed = (field: string): boolean => {
   return field !== "";
 };
+export const isValueNotNullOrUndefined = <T>(value: T): boolean => {
+  return value !== null && value !== undefined;
+};

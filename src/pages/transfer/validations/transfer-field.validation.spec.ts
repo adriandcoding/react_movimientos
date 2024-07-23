@@ -7,6 +7,10 @@ import {
   validateAmountField,
   validateConceptField,
   INVALID_AMOUNT_MESSAGE,
+  validateRealDateField,
+  INVALID_DATE_MESSAGE,
+  validateEmailField,
+  INVALID_EMAIL_MESSAGE,
 } from "./transfer-field.validation";
 
 describe("transfer-field.validation specs", () => {
@@ -119,6 +123,69 @@ describe("transfer-field.validation specs", () => {
       const value = "Transfer";
       //act
       const result = validateConceptField(value);
+      //assert
+      expect(result.succeeded).toBeTruthy();
+    });
+  });
+  describe("validateRealDateField", () => {
+    it("should return true when date is not informed", () => {
+      //arrange
+      const date = undefined;
+      //act
+      const result = validateRealDateField(date);
+      //assert
+      expect(result.succeeded).toBeTruthy();
+    });
+  });
+  it("should return false when date is before today", () => {
+    //arrange
+    const date = new Date(new Date().getTime() - 1);
+    //act
+    const result = validateRealDateField(date);
+    //assert
+    expect(result.succeeded).toBeFalsy();
+    expect(result.message).toBe(INVALID_DATE_MESSAGE);
+  });
+  it("should return true when date is after today", () => {
+    //arrange
+    const date = new Date();
+    date.setDate(date.getDate() + 1);
+    //act
+    const result = validateRealDateField(date);
+    //assert
+    expect(result.succeeded).toBeTruthy();
+  });
+  it("should return true when date is equal to today", () => {
+    //arrange
+    const date = new Date();
+    //act
+    const result = validateRealDateField(date);
+    //assert
+    expect(result.succeeded).toBeTruthy();
+  });
+  describe("validateEmailField", () => {
+    it("should return true when email is not informed", () => {
+      //arrange
+      const value = "";
+      //act
+      const result = validateEmailField(value);
+      //assert
+      expect(result.succeeded).toBeTruthy();
+    });
+    it("should return false when email is not in the correct format", () => {
+      //arrange
+      const value = "johndoeexample.com";
+      //act
+      const result = validateEmailField(value);
+      //assert
+      expect(result.succeeded).toBeFalsy();
+      expect(result.message).toBe(INVALID_EMAIL_MESSAGE);
+    });
+    it("should return true when email is valid", () => {
+      //arrange
+      const value = "johndoe@example.com";
+      //act
+      const result = validateEmailField(value);
       //assert
       expect(result.succeeded).toBeTruthy();
     });
