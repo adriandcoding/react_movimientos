@@ -14,9 +14,7 @@ export const TransferPage: React.FC = () => {
   React.useEffect(() => {
     setAccountList(accountListMock);
   }, []);
-  const handleTransfer = (transferInfo: TransferVm) => {
-    console.log(transferInfo);
-  };
+  const handleTransfer = (transferInfo: TransferVm) => {};
   return (
     <AppLayout>
       <TransferFormComponent

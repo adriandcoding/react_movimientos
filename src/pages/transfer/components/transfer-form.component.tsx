@@ -114,7 +114,6 @@ export const TransferFormComponent: React.FC<Props> = (props) => {
             />
           </div>
         </div>
-
         <button type="submit">REALIZAR LA TRANSFERENCIA</button>
       </form>
     </div>
