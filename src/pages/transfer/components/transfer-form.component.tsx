@@ -1,6 +1,13 @@
-import { AccountVm, emptyTransfer, TransferVm } from "../transfer.vm";
+import {
+  AccountVm,
+  emptyTransfer,
+  emptyTransferError,
+  TransferError,
+  TransferVm,
+} from "../transfer.vm";
+import { validateForm } from "../validations/transfer-form.validation";
 import React from "react";
-
+import classes from "./transfer-form.component.module.css";
 interface Props {
   accountList: AccountVm[];
   onTransfer: (transferInfo: TransferVm) => void;
@@ -8,9 +15,14 @@ interface Props {
 export const TransferFormComponent: React.FC<Props> = (props) => {
   const { accountList, onTransfer } = props;
   const [transfer, setTransfer] = React.useState<TransferVm>(emptyTransfer);
+  const [error, setErrors] = React.useState<TransferError>(emptyTransferError);
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    onTransfer(transfer);
+    const validationResult = validateForm(transfer);
+    setErrors(validationResult.errors);
+    if (validationResult.succeeded) {
+      onTransfer(transfer);
+    }
   };
   const handleFieldChange = (
     event:
@@ -26,46 +38,56 @@ export const TransferFormComponent: React.FC<Props> = (props) => {
   };
   return (
     <div>
-      <h2>Transferencias</h2>
       <form action="" onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="originAccount">Seleccione Cuenta de origen</label>
-          <select name="accountId" required onChange={handleFieldChange}>
-            {accountList.map((account) => (
-              <option key={account.id} value={account.id}>
-                {account.alias}
-              </option>
-            ))}
-            <option value="">Seleccione una cuenta</option>
-          </select>
-
+        <div className={classes.formContainer}>
           <div>
-            <label htmlFor="destinationAccount">Cuenta de destino:</label>
+            <label htmlFor="originAccount">Seleccione Cuenta de origen</label>
+            <select
+              name="accountId"
+              required
+              onChange={handleFieldChange}
+              className={classes.large}
+            >
+              {accountList.map((account) => (
+                <option key={account.id} value={account.id}>
+                  {account.alias}
+                </option>
+              ))}
+              <option value="">Seleccione una cuenta</option>
+            </select>
+            <p className={classes.error}>{error.accountId}</p>
+          </div>
+          <div>
+            <label htmlFor="destinationAccount">Cuenta de destino</label>
             <input
               type="text"
               name="iban"
-              required
               placeholder="IBAN"
               onChange={handleFieldChange}
+              className={classes.large}
             />
+            <p className={classes.error}>{error.iban}</p>
           </div>
           <div>
             <label htmlFor="Beneficiario">Beneficiario</label>
             <input
               type="text"
               name="name"
-              required
               onChange={handleFieldChange}
+              placeholder="Nombre del beneficiario"
+              className={classes.large}
             />
+            <p className={classes.error}>{error.name}</p>
           </div>
           <div>
             <label htmlFor="importe">Importe</label>
             <input
-              type="number"
+              placeholder="Importe"
               name="amount"
-              required
               onChange={handleFieldChange}
+              className={classes.small}
             />
+            <p className={classes.error}>{error.amount}</p>
           </div>
           <div>
             <label htmlFor="Concepto">Concepto</label>
@@ -74,7 +96,10 @@ export const TransferFormComponent: React.FC<Props> = (props) => {
               name="concept"
               id=""
               onChange={handleFieldChange}
+              placeholder="Concepto de la transferencia"
+              className={classes.large}
             />
+            <p className={classes.error}>{error.concept}</p>
           </div>
           <div>
             <label htmlFor="Observaciones">Observaciones</label>
@@ -83,38 +108,52 @@ export const TransferFormComponent: React.FC<Props> = (props) => {
               name="notes"
               id=""
               onChange={handleFieldChange}
+              placeholder="Observaciones adicionales"
+              className={classes.large}
             />
+            <p className={classes.error}>{error.notes}</p>
           </div>
+        </div>
+        <div className={classes.formContainer}>
           <div>
             <p>
               Para que la transferencia se realice en otra fecha diferente a la
               de hoy, por favor indíquenos la fecha deseada:
             </p>
-            <div>
-              <label htmlFor="fechaDeTransferencia">Fecha de ejecución</label>
-              <input
-                type="date"
-                name="realDateTransfer"
-                id=""
-                onChange={handleFieldChange}
-              />
-            </div>
+
+            <label htmlFor="fechaDeTransferencia">Fecha de ejecución</label>
+            <input
+              type="date"
+              name="realDateTransfer"
+              id=""
+              onChange={handleFieldChange}
+              className={classes.medium}
+            />
+            <p className={classes.error}>{error.realDateTransfer}</p>
           </div>
         </div>
         <div>
-          <p>Escriba una dirección de email para avisar al beneficiario:</p>
-          <div>
-            <label htmlFor="email">Email del beneficiario</label>
-            <input
-              type="email"
-              name="email"
-              id=""
-              required
-              onChange={handleFieldChange}
-            />
+          <div className={classes.formContainer}>
+            <div>
+              <p>Escriba una dirección de email para avisar al beneficiario:</p>
+              <div>
+                <label htmlFor="email">Email del beneficiario</label>
+                <input
+                  type="email"
+                  name="email"
+                  id=""
+                  onChange={handleFieldChange}
+                  placeholder="Correo electrónico del beneficiario"
+                  className={classes.large}
+                />
+                <p className={classes.error}>{error.email}</p>
+              </div>
+            </div>
           </div>
         </div>
-        <button type="submit">REALIZAR LA TRANSFERENCIA</button>
+        <div className={classes.boton}>
+          <button type="submit">REALIZAR LA TRANSFERENCIA</button>
+        </div>
       </form>
     </div>
   );

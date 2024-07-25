@@ -1,7 +1,8 @@
 import { AppLayout } from "@/layouts";
 import React from "react";
-import { AccountVm, TransferVm } from "./transfer.vm";
+import { AccountVm } from "./transfer.vm";
 import { TransferFormComponent } from "./components";
+import classes from "./transfer.page.module.css";
 
 export const accountListMock: AccountVm[] = [
   { id: "1", iban: "FR763000101012345678901132", alias: "Test account" },
@@ -14,13 +15,16 @@ export const TransferPage: React.FC = () => {
   React.useEffect(() => {
     setAccountList(accountListMock);
   }, []);
-  const handleTransfer = (transferInfo: TransferVm) => {};
+  const handleTransfer = (/*transferInfo: TransferVm*/) => {};
   return (
     <AppLayout>
-      <TransferFormComponent
-        accountList={accountList}
-        onTransfer={handleTransfer}
-      />
+      <div className={classes.headerContainer}>
+        <h1 className={classes.titleContainer}>Transferencias Nacionales</h1>
+        <TransferFormComponent
+          accountList={accountList}
+          onTransfer={handleTransfer}
+        />
+      </div>
     </AppLayout>
   );
 };

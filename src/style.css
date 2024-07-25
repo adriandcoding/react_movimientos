@@ -8,7 +8,7 @@
   --primary_color: #22c6cb;
   --secondary_color: #232c3b;
   --primary_color_darker: #1d9ea8;
-  --error_color: #ff0000c3;
+  --error_color: #d93131c3;
   --element-border-color: #e5e5e5;
   --element-radius: 10px;
   --table-header-color: var(--secondary_color);
@@ -164,10 +164,27 @@ input {
   border-radius: var(--element-radius);
   border: 1px solid var(--element-border-color);
   padding: 0.8em 1em;
-  margin-bottom: 10px;
+
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3) inset;
   border: 1px solid #ddd;
   width: 100%;
+}
+select {
+  overflow: hidden;
+  display: block;
+  height: 100%;
+  font-size: 13px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3) inset;
+  padding: 8px 10px;
+  option {
+    font-size: 15px;
+  }
 }
 
 button {

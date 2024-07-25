@@ -25,5 +25,5 @@
   font-weight: 600;
 }
 .expense {
-  color: rgb(245, 49, 49);
+  color: var(--error_color);
 }

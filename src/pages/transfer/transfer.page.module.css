@@ -1,0 +1,13 @@
+.headerContainer {
+  max-width: 1200px;
+  margin: 20px 20px;
+  padding-bottom: 15px;
+}
+.titleContainer {
+  font-weight: 300;
+  font-size: 1.5rem;
+  border-bottom: 5px solid var(--secondary_color);
+  padding-bottom: 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
