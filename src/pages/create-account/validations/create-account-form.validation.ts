@@ -13,10 +13,6 @@ export const validateForm = (
     validateTypeField(account.name),
   ];
 
-  // Log the individual field validation results
-  console.log("Validation result for type:", FieldValidationResult[0]);
-  console.log("Validation result for name:", FieldValidationResult[1]);
-
   const formValidationResult = {
     succeeded: FieldValidationResult.every(
       (validation): boolean => validation.succeeded
@@ -26,9 +22,6 @@ export const validateForm = (
       name: FieldValidationResult[1].message ?? "",
     },
   };
-
-  // Log the final form validation result
-  console.log("Form validation result:", formValidationResult);
 
   return formValidationResult;
 };

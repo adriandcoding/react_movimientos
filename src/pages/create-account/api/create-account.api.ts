@@ -8,8 +8,6 @@ export const saveAccount = async (account: Account): Promise<Account> => {
     const { data } = await Axios.post<Account>(url, account);
     return data;
   } catch (error) {
-    // Manejo de errores (puedes ajustar esto según tus necesidades)
-    console.error("Error saving account:", error);
     throw error;
   }
 };

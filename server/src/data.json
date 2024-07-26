@@ -25,14 +25,6 @@
       "lastTransaction": "2019-11-15T08:29:04"
     },
     {
-      "iban": "SE46 2139 0009 5006 5080 0257",
-      "name": "Add your name in the body",
-      "type": "ahorro",
-      "balance": 0,
-      "lastTransaction": "2024-07-26T16:08:01.417Z",
-      "id": "ujlgEdL"
-    },
-    {
       "iban": "CY34 0200 2380 3817 1L63 1513 QI24",
       "name": "verano",
       "type": "ahorro",
@@ -41,28 +33,12 @@
       "id": "EofIqbI"
     },
     {
-      "iban": "AE47 8448 4001 1853 9909 008",
-      "name": "fsadfasf",
-      "type": "3",
+      "iban": "FR92 6056 9334 9497 WBS9 1164 Q44",
+      "name": "Cuenta de Prueba",
+      "type": "1",
       "balance": 0,
-      "lastTransaction": "2024-07-26T20:28:46.077Z",
-      "id": "K-UJlHO"
-    },
-    {
-      "iban": "PT45 5062 0418 8307 0030 9464 1",
-      "name": "vacaciones",
-      "type": "2",
-      "balance": 0,
-      "lastTransaction": "2024-07-26T20:31:33.421Z",
-      "id": "jhKE6Qb"
-    },
-    {
-      "iban": "KZ93 025G 2957 2I94 2434",
-      "name": "ahorro1",
-      "type": "2",
-      "balance": 0,
-      "lastTransaction": "2024-07-26T20:35:00.311Z",
-      "id": "C1NcJ5b"
+      "lastTransaction": "2024-07-26T20:45:41.897Z",
+      "id": "9JbHCDd"
     }
   ],
   "movements": [
