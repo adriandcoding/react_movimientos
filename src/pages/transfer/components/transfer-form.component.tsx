@@ -11,11 +11,13 @@ import classes from "./transfer-form.component.module.css";
 interface Props {
   accountList: AccountVm[];
   onTransfer: (transferInfo: TransferVm) => void;
+  accountId?: string;
 }
 export const TransferFormComponent: React.FC<Props> = (props) => {
-  const { accountList, onTransfer } = props;
+  const { accountList, onTransfer, accountId } = props;
   const [transfer, setTransfer] = React.useState<TransferVm>(emptyTransfer);
   const [error, setErrors] = React.useState<TransferError>(emptyTransferError);
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const validationResult = validateForm(transfer);
@@ -24,6 +26,13 @@ export const TransferFormComponent: React.FC<Props> = (props) => {
       onTransfer(transfer);
     }
   };
+
+  React.useEffect(() => {
+    if (accountId) {
+      setTransfer({ ...transfer, accountId });
+    }
+  }, []);
+
   const handleFieldChange = (
     event:
       | React.ChangeEvent<HTMLInputElement>
@@ -36,6 +45,7 @@ export const TransferFormComponent: React.FC<Props> = (props) => {
       });
     }
   };
+
   return (
     <div>
       <form action="" onSubmit={handleSubmit}>

@@ -8,17 +8,19 @@ import {
   mapAccountListFromApiToVm,
   mapTransferFromVmToApi,
 } from "./transfer.mapper";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export const TransferPage: React.FC = () => {
   const navigate = useNavigate();
   const [accountList, setAccountList] = React.useState<AccountVm[]>([]);
+  const { id } = useParams<{ id: string }>();
 
   React.useEffect(() => {
     getAccountList().then((accountsListApi) => {
       setAccountList(accountsListApi.map(mapAccountListFromApiToVm));
     });
   }, []);
+
   const handleTransfer = (transferInfo: TransferVm) => {
     const transfer = mapTransferFromVmToApi(transferInfo);
     createTransfer(transfer).then((result) => {
@@ -37,6 +39,7 @@ export const TransferPage: React.FC = () => {
         <TransferFormComponent
           accountList={accountList}
           onTransfer={handleTransfer}
+          accountId={id}
         />
       </div>
     </AppLayout>
