@@ -13,7 +13,6 @@ export const AppLayout: React.FC<Props> = (props) => {
       <HeaderComponent />
       <NavBarComponent />
       <main>{children}</main>
-
       <FooterComponent />
     </div>
   );

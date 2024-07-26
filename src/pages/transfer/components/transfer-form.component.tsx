@@ -11,10 +11,10 @@ import classes from "./transfer-form.component.module.css";
 interface Props {
   accountList: AccountVm[];
   onTransfer: (transferInfo: TransferVm) => void;
-  accountId?: string;
+  defaultAccountId?: string;
 }
 export const TransferFormComponent: React.FC<Props> = (props) => {
-  const { accountList, onTransfer, accountId } = props;
+  const { accountList, onTransfer, defaultAccountId } = props;
   const [transfer, setTransfer] = React.useState<TransferVm>(emptyTransfer);
   const [error, setErrors] = React.useState<TransferError>(emptyTransferError);
 
@@ -28,8 +28,8 @@ export const TransferFormComponent: React.FC<Props> = (props) => {
   };
 
   React.useEffect(() => {
-    if (accountId) {
-      setTransfer({ ...transfer, accountId });
+    if (defaultAccountId) {
+      setTransfer({ ...transfer, accountId: defaultAccountId });
     }
   }, []);
 
@@ -54,9 +54,9 @@ export const TransferFormComponent: React.FC<Props> = (props) => {
             <label htmlFor="originAccount">Seleccione Cuenta de origen</label>
             <select
               name="accountId"
-              required
               onChange={handleFieldChange}
               className={classes.large}
+              value={transfer.accountId}
             >
               {accountList.map((account) => (
                 <option key={account.id} value={account.id}>

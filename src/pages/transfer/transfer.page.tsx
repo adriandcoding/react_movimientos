@@ -1,4 +1,5 @@
 import { AppLayout } from "@/layouts";
+import { useNavigate, useParams } from "react-router-dom";
 import React from "react";
 import { AccountVm, TransferVm } from "./transfer.vm";
 import { TransferFormComponent } from "./components";
@@ -8,7 +9,6 @@ import {
   mapAccountListFromApiToVm,
   mapTransferFromVmToApi,
 } from "./transfer.mapper";
-import { useNavigate, useParams } from "react-router-dom";
 
 export const TransferPage: React.FC = () => {
   const navigate = useNavigate();
@@ -39,7 +39,7 @@ export const TransferPage: React.FC = () => {
         <TransferFormComponent
           accountList={accountList}
           onTransfer={handleTransfer}
-          accountId={id}
+          defaultAccountId={id}
         />
       </div>
     </AppLayout>

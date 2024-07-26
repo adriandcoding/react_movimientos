@@ -17,11 +17,13 @@ export const AccountListItemComponent: React.FC<Props> = (props) => {
   const navigate = useNavigate();
 
   const handledSelectedOptionChange = (
-    e: React.ChangeEvent<HTMLSelectElement>
+    event: React.ChangeEvent<HTMLSelectElement>
   ) => {
-    switch (e.target.value) {
+    switch (event.target.value) {
       case ACTION_TRANSFER:
-        navigate(generatePath(appRoutes.transfer, { id: accountItem.id }));
+        navigate(
+          generatePath(appRoutes.transferFromAccount, { id: accountItem.id })
+        );
         break;
       case ACTION_MOVEMENTS:
         navigate(generatePath(appRoutes.movements, { id: accountItem.id }));
