@@ -1,21 +1,34 @@
 import { AppLayout } from "@/layouts";
 import React from "react";
-import { AccountVm } from "./transfer.vm";
+import { AccountVm, TransferVm } from "./transfer.vm";
 import { TransferFormComponent } from "./components";
 import classes from "./transfer.page.module.css";
-
-export const accountListMock: AccountVm[] = [
-  { id: "1", iban: "FR763000101012345678901132", alias: "Test account" },
-  { id: "2", iban: "FR763000101012345678901133", alias: "Test account 2" },
-  { id: "3", iban: "FR763000101012345678901134", alias: "Test account 3" },
-];
+import { createTransfer, getAccountList } from "./api";
+import {
+  mapAccountListFromApiToVm,
+  mapTransferFromVmToApi,
+} from "./transfer.mapper";
+import { useNavigate } from "react-router-dom";
 
 export const TransferPage: React.FC = () => {
+  const navigate = useNavigate();
   const [accountList, setAccountList] = React.useState<AccountVm[]>([]);
   React.useEffect(() => {
-    setAccountList(accountListMock);
+    getAccountList().then((accountsListApi) => {
+      setAccountList(accountsListApi.map(mapAccountListFromApiToVm));
+    });
   }, []);
-  const handleTransfer = (/*transferInfo: TransferVm*/) => {};
+  const handleTransfer = (transferInfo: TransferVm) => {
+    const transfer = mapTransferFromVmToApi(transferInfo);
+    createTransfer(transfer).then((result) => {
+      if (result) {
+        alert("Transferencia realizada con éxito");
+        navigate("/account-list");
+      } else {
+        alert("Error al realizar la transferencia");
+      }
+    });
+  };
   return (
     <AppLayout>
       <div className={classes.headerContainer}>

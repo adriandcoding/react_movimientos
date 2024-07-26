@@ -47,12 +47,3 @@ export const emptyTransferError: TransferError = {
   realDateTransfer: undefined,
   email: "",
 };
-
-export interface FieldValidation {
-  succeeded: boolean;
-  message?: string;
-}
-export interface FormValidation {
-  succeeded: boolean;
-  errors: TransferError;
-}

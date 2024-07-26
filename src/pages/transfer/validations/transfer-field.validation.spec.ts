@@ -1,16 +1,18 @@
 import {
-  validateIBANField,
   REQUIRED_FIELD_MESSAGE,
   INVALID_IBAN_MESSAGE,
+  INVALID_AMOUNT_MESSAGE,
+  INVALID_DATE_MESSAGE,
+  INVALID_EMAIL_MESSAGE,
+} from "@/common/validations/validations.const";
+import {
+  validateIBANField,
   validateAccountIdField,
   validateNameField,
   validateAmountField,
   validateConceptField,
-  INVALID_AMOUNT_MESSAGE,
   validateRealDateField,
-  INVALID_DATE_MESSAGE,
   validateEmailField,
-  INVALID_EMAIL_MESSAGE,
 } from "./transfer-field.validation";
 
 describe("transfer-field.validation specs", () => {

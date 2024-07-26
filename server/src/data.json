@@ -108,5 +108,28 @@
       "accountId": "3"
     }
   ],
-  "transfer": []
+  "transfer": [
+    {
+      "accountId": "2",
+      "iban": "ES9121000418450200051332",
+      "name": "adrian ",
+      "amount": "12",
+      "concept": "cena",
+      "notes": "",
+      "dateTransfer": "Fri Jul 26 2024",
+      "realDateTransfer": "",
+      "id": 1
+    },
+    {
+      "accountId": "3",
+      "iban": "ES9121000418450200051332",
+      "name": "adrian ",
+      "amount": "12",
+      "concept": "cena",
+      "notes": "",
+      "dateTransfer": "Fri Jul 26 2024",
+      "realDateTransfer": "",
+      "id": 2
+    }
+  ]
 }

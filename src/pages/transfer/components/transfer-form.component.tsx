@@ -115,7 +115,7 @@ export const TransferFormComponent: React.FC<Props> = (props) => {
           </div>
         </div>
         <div className={classes.formContainer}>
-          <div>
+          <div className={classes.dateMargin}>
             <p>
               Para que la transferencia se realice en otra fecha diferente a la
               de hoy, por favor indíquenos la fecha deseada:
