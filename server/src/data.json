@@ -39,6 +39,14 @@
       "balance": 0,
       "lastTransaction": "2024-07-26T20:45:41.897Z",
       "id": "9JbHCDd"
+    },
+    {
+      "iban": "DE27 0068 0261 0604 0587 38",
+      "name": "cuenta de prueba2",
+      "type": "3",
+      "balance": 0,
+      "lastTransaction": "2024-07-26T20:56:36.206Z",
+      "id": "fvWJ-4T"
     }
   ],
   "movements": [

@@ -34,7 +34,6 @@ export const CreateAccountFormComponent: React.FC<Props> = (props) => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const validationResult = validateForm(account);
-    console.log(validationResult);
     if (validationResult.succeeded) {
       createAccount(account);
     } else {
