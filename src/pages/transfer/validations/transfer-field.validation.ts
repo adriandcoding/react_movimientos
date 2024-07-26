@@ -7,12 +7,12 @@ import {
 } from "@/common/validations";
 import {
   buildValidationFalseResponse,
+  buildValidationFieldFalseResponse,
   buildValidationTrueResponse,
 } from "@/common/validations/plain.validation.helper";
 import { FieldValidation } from "@/common/validations/validation-model";
 
 import {
-  REQUIRED_FIELD_MESSAGE,
   INVALID_IBAN_MESSAGE,
   INVALID_AMOUNT_MESSAGE,
   INVALID_DATE_MESSAGE,
@@ -21,7 +21,7 @@ import {
 
 export const validateIBANField = (value: string): FieldValidation => {
   if (!isFieldInformed(value)) {
-    return buildValidationFalseResponse(REQUIRED_FIELD_MESSAGE);
+    return buildValidationFieldFalseResponse();
   }
   if (!isValidIban(value)) {
     return buildValidationFalseResponse(INVALID_IBAN_MESSAGE);
@@ -31,13 +31,13 @@ export const validateIBANField = (value: string): FieldValidation => {
 
 export const validateAccountIdField = (value: string): FieldValidation => {
   if (!isFieldInformed(value)) {
-    return buildValidationFalseResponse(REQUIRED_FIELD_MESSAGE);
+    return buildValidationFieldFalseResponse();
   }
   return buildValidationTrueResponse();
 };
 export const validateNameField = (value: string): FieldValidation => {
   if (!isFieldInformed(value)) {
-    return buildValidationFalseResponse(REQUIRED_FIELD_MESSAGE);
+    return buildValidationFieldFalseResponse();
   }
   return buildValidationTrueResponse();
 };
@@ -49,7 +49,7 @@ export const validateAmountField = (value: number): FieldValidation => {
 };
 export const validateConceptField = (value: string): FieldValidation => {
   if (!isFieldInformed(value)) {
-    return buildValidationFalseResponse(REQUIRED_FIELD_MESSAGE);
+    return buildValidationFieldFalseResponse();
   }
   return buildValidationTrueResponse();
 };

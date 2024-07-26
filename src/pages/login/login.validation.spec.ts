@@ -1,3 +1,4 @@
+import { REQUIRED_FIELD_MESSAGE } from "@/common/validations/validations.const";
 import { validateForm } from "./login.validation";
 import { Credentials } from "./login.vm";
 
@@ -27,7 +28,7 @@ describe("login validation", () => {
     // Assert
     expect(result.succeeded).toBeFalsy();
     expect(result.errors.password).toBe("");
-    expect(result.errors.username).toBe("Username is required");
+    expect(result.errors.username).toBe(REQUIRED_FIELD_MESSAGE);
   });
   it("should return validation failed when password is empty", () => {
     // Arrange
@@ -39,7 +40,7 @@ describe("login validation", () => {
     const result = validateForm(credentials);
     // Assert
     expect(result.succeeded).toBeFalsy();
-    expect(result.errors.password).toBe("Password is required");
+    expect(result.errors.password).toBe(REQUIRED_FIELD_MESSAGE);
     expect(result.errors.username).toBe("");
   });
   it("should return validation failed when both fields are empty", () => {
@@ -52,7 +53,7 @@ describe("login validation", () => {
     const result = validateForm(credentials);
     // Assert
     expect(result.succeeded).toBeFalsy();
-    expect(result.errors.password).toBe("Password is required");
-    expect(result.errors.username).toBe("Username is required");
+    expect(result.errors.password).toBe(REQUIRED_FIELD_MESSAGE);
+    expect(result.errors.username).toBe(REQUIRED_FIELD_MESSAGE);
   });
 });

@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 export const TransferPage: React.FC = () => {
   const navigate = useNavigate();
   const [accountList, setAccountList] = React.useState<AccountVm[]>([]);
+
   React.useEffect(() => {
     getAccountList().then((accountsListApi) => {
       setAccountList(accountsListApi.map(mapAccountListFromApiToVm));

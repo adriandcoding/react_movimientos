@@ -1,4 +1,5 @@
 import { FieldValidation } from "./validation-model";
+import { REQUIRED_FIELD_MESSAGE } from "./validations.const";
 
 export const buildValidationFalseResponse = (
   message: string
@@ -10,3 +11,6 @@ export const buildValidationFalseResponse = (
 export const buildValidationTrueResponse = (): FieldValidation => ({
   succeeded: true,
 });
+export const buildValidationFieldFalseResponse = () => {
+  return buildValidationFalseResponse(REQUIRED_FIELD_MESSAGE);
+};
