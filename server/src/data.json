@@ -39,6 +39,22 @@
       "balance": 0,
       "lastTransaction": "2024-07-26T16:08:33.327Z",
       "id": "EofIqbI"
+    },
+    {
+      "iban": "AE47 8448 4001 1853 9909 008",
+      "name": "fsadfasf",
+      "type": "3",
+      "balance": 0,
+      "lastTransaction": "2024-07-26T20:28:46.077Z",
+      "id": "K-UJlHO"
+    },
+    {
+      "iban": "PT45 5062 0418 8307 0030 9464 1",
+      "name": "vacaciones",
+      "type": "2",
+      "balance": 0,
+      "lastTransaction": "2024-07-26T20:31:33.421Z",
+      "id": "jhKE6Qb"
     }
   ],
   "movements": [

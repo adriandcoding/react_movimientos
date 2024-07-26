@@ -16,15 +16,18 @@ export const LoginFormComponent: React.FC<LoginProps> = (props) => {
   const [credentials, setCredentials] = React.useState<Credentials>(
     createEmptyCredentials()
   );
+
   const [errors, setErrors] = React.useState<CredentialsFormErrors>(
     createEmptyCredentialsFormErrors()
   );
+
   const handleFieldChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCredentials({
       ...credentials,
       [event.target.name]: event.target.value,
     });
   };
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const validationResult = validateForm(credentials);

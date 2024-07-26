@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   AccountListPage,
   AccountPage,
-  CreateAccount,
+  CreateAccounts,
   LoginPage,
   MovementListPage,
   TransferPage,
@@ -21,7 +21,7 @@ export const Router = () => {
           path={appRoutes.transferFromAccount}
           element={<TransferPage />}
         />
-        <Route path={appRoutes.createAccount} element={<CreateAccount />} />
+        <Route path={appRoutes.createAccount} element={<CreateAccounts />} />
       </Routes>
     </BrowserRouter>
   );
