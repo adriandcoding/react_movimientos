@@ -25,7 +25,7 @@ export const validateForm = (
   ];
   return {
     succeeded: FieldValidationResult.every(
-      (validation) => validation.succeeded
+      (validation): boolean => validation.succeeded
     ),
     errors: {
       accountId: FieldValidationResult[0].message ?? "",

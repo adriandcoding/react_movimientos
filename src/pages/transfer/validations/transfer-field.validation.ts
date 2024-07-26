@@ -19,6 +19,13 @@ import {
   INVALID_EMAIL_MESSAGE,
 } from "@/common/validations/validations.const";
 
+export const validateAccountIdField = (value: string): FieldValidation => {
+  if (!isFieldInformed(value)) {
+    return buildValidationFieldFalseResponse();
+  }
+  return buildValidationTrueResponse();
+};
+
 export const validateIBANField = (value: string): FieldValidation => {
   if (!isFieldInformed(value)) {
     return buildValidationFieldFalseResponse();
@@ -29,12 +36,6 @@ export const validateIBANField = (value: string): FieldValidation => {
   return buildValidationTrueResponse();
 };
 
-export const validateAccountIdField = (value: string): FieldValidation => {
-  if (!isFieldInformed(value)) {
-    return buildValidationFieldFalseResponse();
-  }
-  return buildValidationTrueResponse();
-};
 export const validateNameField = (value: string): FieldValidation => {
   if (!isFieldInformed(value)) {
     return buildValidationFieldFalseResponse();

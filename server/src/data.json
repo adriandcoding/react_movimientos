@@ -23,6 +23,22 @@
       "name": "Ahorro",
       "balance": 8500,
       "lastTransaction": "2019-11-15T08:29:04"
+    },
+    {
+      "iban": "SE46 2139 0009 5006 5080 0257",
+      "name": "Add your name in the body",
+      "type": "ahorro",
+      "balance": 0,
+      "lastTransaction": "2024-07-26T16:08:01.417Z",
+      "id": "ujlgEdL"
+    },
+    {
+      "iban": "CY34 0200 2380 3817 1L63 1513 QI24",
+      "name": "verano",
+      "type": "ahorro",
+      "balance": 0,
+      "lastTransaction": "2024-07-26T16:08:33.327Z",
+      "id": "EofIqbI"
     }
   ],
   "movements": [

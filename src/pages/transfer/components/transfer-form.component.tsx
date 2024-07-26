@@ -58,12 +58,12 @@ export const TransferFormComponent: React.FC<Props> = (props) => {
               className={classes.large}
               value={transfer.accountId}
             >
+              <option value="">Seleccione una cuenta</option>
               {accountList.map((account) => (
                 <option key={account.id} value={account.id}>
                   {account.alias}
                 </option>
               ))}
-              <option value="">Seleccione una cuenta</option>
             </select>
             <p className={classes.error}>{error.accountId}</p>
           </div>
