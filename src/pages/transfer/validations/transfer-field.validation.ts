@@ -5,6 +5,10 @@ import {
   isValueNotNullOrUndefined,
   isValidEmail,
 } from "@/common/validations";
+import {
+  buildValidationFalseResponse,
+  buildValidationTrueResponse,
+} from "@/common/validations/plain.validation.helper";
 import { FieldValidation } from "@/common/validations/validation-model";
 
 import {
@@ -14,15 +18,6 @@ import {
   INVALID_DATE_MESSAGE,
   INVALID_EMAIL_MESSAGE,
 } from "@/common/validations/validations.const";
-
-const buildValidationFalseResponse = (message: string): FieldValidation => ({
-  succeeded: false,
-  message,
-});
-
-const buildValidationTrueResponse = (): FieldValidation => ({
-  succeeded: true,
-});
 
 export const validateIBANField = (value: string): FieldValidation => {
   if (!isFieldInformed(value)) {
