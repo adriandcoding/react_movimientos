@@ -36,7 +36,6 @@ Aplicación bancaria simple construida con React. Incluye autenticación de usua
 3. **Frontend**
 
    ```sh
-   cd client
    npm install
    npm run dev
    ```
