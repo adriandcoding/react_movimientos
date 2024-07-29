@@ -1,5 +1,5 @@
 📚 Aplicación React-Banco README
-////////////////////////////////////////////////////////////////
+
 📖 Descripción:
 
 Aplicación bancaria simple construida con React. Incluye autenticación de usuarios y diversas operaciones bancarias.
