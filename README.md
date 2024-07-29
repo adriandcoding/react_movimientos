@@ -19,24 +19,31 @@ Aplicación bancaria simple construida con React. Incluye autenticación de usua
 
 ### 🚀 Configuración
 
-Clonar el repositorio:
+1. Clonar el repositorio:
 
-```sh
-git clone https://github.com/tu-repo/banking-app.git
-Backend
-sh
-Copiar código
-cd server
-npm install
-npm start
-Frontend
-sh
-Copiar código
-npm install
-npm run dev
-🛠️ Uso
+   ```sh
+   git clone https://github.com/adriandcoding/react_movimientos.git
+   ```
+
+2. **Backend**
+
+   ```sh
+   cd server
+   npm install
+   npm start
+   ```
+
+3. **Frontend**
+
+   ```sh
+   cd client
+   npm install
+   npm run dev
+   ```
+
+## 🛠️ Uso
+
 Utiliza las siguientes credenciales para iniciar sesión:
 
-Usuario: admin@email.com
-Contraseña: test
-```
+- **Usuario:** admin@email.com
+- **Contraseña:** test
