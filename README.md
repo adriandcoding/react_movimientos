@@ -2,7 +2,7 @@
 
 ## 📖 Descripción
 
-Aplicación bancaria simple construida con React. Incluye autenticación de usuarios y diversas operaciones bancarias.
+Aplicación bancaria simple construida con React. Incluye autenticación de usuarios, diversas operaciones bancarias y testing.
 
 ## ✨ Características
 
