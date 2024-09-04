@@ -23,30 +23,6 @@
       "name": "Ahorro",
       "balance": 8500,
       "lastTransaction": "2019-11-15T08:29:04"
-    },
-    {
-      "iban": "CY34 0200 2380 3817 1L63 1513 QI24",
-      "name": "verano",
-      "type": "ahorro",
-      "balance": 0,
-      "lastTransaction": "2024-07-26T16:08:33.327Z",
-      "id": "EofIqbI"
-    },
-    {
-      "iban": "FR92 6056 9334 9497 WBS9 1164 Q44",
-      "name": "Cuenta de Prueba",
-      "type": "1",
-      "balance": 0,
-      "lastTransaction": "2024-07-26T20:45:41.897Z",
-      "id": "9JbHCDd"
-    },
-    {
-      "iban": "DE27 0068 0261 0604 0587 38",
-      "name": "cuenta de prueba2",
-      "type": "3",
-      "balance": 0,
-      "lastTransaction": "2024-07-26T20:56:36.206Z",
-      "id": "fvWJ-4T"
     }
   ],
   "movements": [
